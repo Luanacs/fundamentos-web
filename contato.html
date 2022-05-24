@@ -19,23 +19,24 @@
 
     <h1 class="center">Entre em contato comigo</h1>
 
-    <div class="container mb-50" >
+    <div class="container mb-50">
       <div>
         <form>
           <h2>Mande uma mensagem</h2>
           <label for="nome">Nome:</label> <br />
-          <input type="text" id="nome" />
-          <br />
-          <br />
-          <label for="email">Nome:</label><br />
-          <input type="email" id="email" />
-          <br />
-          <br />
-          <label for="assunto">Nome:</label><br />
-          <textarea name="assunto" id="assunto" cols="60" rows="5"></textarea>
-          <br />
-          <br />
-          <button>Enviar</button>
+          <input type="text" id="nome" onkeyup="validaNome()">
+          <div id='txtNome'></div>
+          <br>
+          <label for="email">E-mail:</label><br>
+          <input type="email" id="email" onkeyup="validaEmail()" >
+          <div id='txtEmail'></div>
+          <br>
+          <label for="assunto">Assunto:</label><br>
+          <textarea name="assunto" id="assunto" cols="60" rows="5" onkeyup="validaAssunto()"></textarea>
+          <div id='txtAssunto'></div>
+          <br>
+          <br>
+          <button onclick="enviar()">Enviar</button>
         </form>
       </div>
 
@@ -53,6 +54,9 @@
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
+          onmousemove="mapaZoom()"
+          onmouseout="mapaNormal()"
+          id="mapa"
         ></iframe>
       </div>
     </div>
@@ -83,5 +87,11 @@
         />
       </a>
     </div>
+    <footer>
+      <p class="center">Luana Chaves &copy;</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+
   </body>
 </html>
